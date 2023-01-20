@@ -1,6 +1,7 @@
 import { createApp, defineAsyncComponent } from "vue";
 import App from "./App.vue";
 import store from "./stores";
+import { createPinia } from "pinia";
 import router from "./router";
 import Workout from './components/Workout.vue';
 import WeightConverter from './components/WeightConverter.vue';
@@ -10,6 +11,7 @@ import 'bootstrap';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
 const app = createApp(App);
+app.use(createPinia());
 app.use(store);
 app.use(router);
 app.component('workout', Workout);
