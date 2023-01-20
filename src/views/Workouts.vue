@@ -8,7 +8,7 @@
   </div>
 
   <div v-else>
-    <h2>Pick a workout and get started</h2>
+    <h2>Hi, {{ user }}! Pick a workout and get started ...</h2>
     <div class="container-fluid pt-2 d-flex flex-wrap">
       <workout v-for="workout in workouts" :key="workout.id" v-bind:id="workout.id" @workout-updated="workoutUpdated"
         @workout-deleted="workoutDeleted"></workout>
@@ -22,6 +22,7 @@ export default {
   props: ["id"],
   data() {
     return {
+      user: this.$store.getters.user,
       selectedWorkout: null,
       selectedWorkoutIndex: -1,
     };

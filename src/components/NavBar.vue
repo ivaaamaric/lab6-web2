@@ -14,6 +14,12 @@
 
 <script>
 export default {
+    data() {
+        return {
+            editable: false,
+            workout: { url: "" },
+        }
+    },
     methods: {
         logout() {
             this.$store.commit('logoutUser');
